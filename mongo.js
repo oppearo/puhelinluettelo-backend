@@ -9,7 +9,7 @@ const password = process.argv[2];
 const personName = process.argv[3];
 const personNumber = process.argv[4];
 
-const url = `mongodb+srv://oppearo:${password}@fsocluster.tet5fvg.mongodb.net/phoneBook?retryWrites=true&w=majority`;
+const url = `mongodb+srv://phonebook:${password}@fsocluster.tet5fvg.mongodb.net/phoneBook?retryWrites=true&w=majority`;
 
 mongoose.set("strictQuery", false);
 mongoose.connect(url);
