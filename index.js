@@ -89,14 +89,13 @@ app.post("/api/persons", (req, res) => {
   } else if (!body.number) {
     return res.status(400).json({ error: "number missing" });
   }
-
+  /* to be fixed in later parts
   const listOfNames = persons.map((person) => person.name);
   if (listOfNames.includes(body.name)) {
     return res.status(400).json({ error: "name must be unique" });
   }
-
+  */
   const person = new Person({
-    id: getRandomId(),
     name: body.name,
     number: body.number,
   });
