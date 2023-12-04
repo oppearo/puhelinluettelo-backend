@@ -1,0 +1,17 @@
+### Add person
+# @name addPerson
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+  "name": "Seppo Seponseppo",
+  "number": "040-1234098"
+}
+### Update the same person
+PUT http://localhost:3001/api/persons/{{addPerson.response.body.id}}
+content-type: application/json
+
+{
+  "name": "Seppo Seponseppo",
+  "number": "040-123409999"
+}
