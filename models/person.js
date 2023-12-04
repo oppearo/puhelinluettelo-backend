@@ -25,7 +25,15 @@ const personSchema = new mongoose.Schema({
   },
   number: {
     type: String,
+    minlength: 8,
+    maxlength: 12,
     required: true,
+    validate: {
+      validator: function (val) {
+        // for finnish phone numbers
+        return /^(\d{2,3})-(\d{6,})/.test(val);
+      },
+    },
   },
 });
 
